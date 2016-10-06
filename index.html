@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en" ng-app='NarrowItDownApp'>
+  <head>
+style>
+<link rel="stylesheet" href="styles/bootstrap.min.css">
+    <style>
+      .emptyMessage {
+        font-weight: bold;
+        color: red;
+        font-size: 1.2em;
+      }
+      li {
+        margin-bottom: 7px;
+        font-size: 1.2em;
+      }
+      li > button {
+        margin-left: 6px;
+      }
+      button > span {
+        color: green;
+      }
+    </style>
+    </style>
+<script src="angular.min.js"></script>
+    <script src="app.js"></script>
+    <title>Narrow Down Your Menu Choice</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/styles.css">
+   </head>
+<body>
+   <div class="container" ng-controller='NarrowItDownController as list'>
+    <h1>Narrow Down Your Chinese Menu Choice</h1>
+
+    <div class="form-group">
+      <input type="text"  class="form-control" ng-model="list.choice">
+    </div>
+    <div class="form-group narrow-button">
+      <button class="btn btn-primary" ng-click="list.search();">Narrow It Down For Me!</button>
+     </div> 
+      <ol>
+        <list-item ng-repeat="it in list.menulist"></list-item>
+      </ol>
+      <div class="emptyMessage"ng-show="list.error">Item didnot found in the menu</div>
+      </div>
+      
+</body>
+</html>
