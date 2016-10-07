@@ -65,6 +65,8 @@ var foundItems=[];
           MenuSearchService.storeMenu(foundItems);  
           list.menulist=foundItems;
          }
+
+        }
         else {
               list.found="FALSE";
              }
