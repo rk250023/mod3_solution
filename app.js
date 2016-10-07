@@ -45,7 +45,7 @@ function NarrowItDownController(MenuSearchService) {
 function getMatchedMenuItem (searchItem) {
 var foundItems=[];
  var foundItems1=[]; 
- 
+ var FLAG="No";
   var promise = MenuSearchService.getDatafromserver();
 
   promise.then(function (response) {
@@ -54,12 +54,12 @@ var foundItems=[];
        for(var i=0;i<foundItems1.length; i++){
            if (foundItems1[i].description.toLowerCase().indexOf(searchItem) != -1) {
             foundItems.push(foundItems1[i]);
+             FLAG="YES";
                                     
             }
-             console.log("from srch", searchItem);
-           list.found="";
+            
          }
-          if (list.found === "") {
+          if (FLAG === "YES") {
           MenuSearchService.storeMenu(foundItems);  
           list.menulist=foundItems;
          }
