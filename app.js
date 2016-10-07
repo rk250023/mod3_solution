@@ -2,20 +2,9 @@
 'use strict';
 angular.module('NarrowItDownApp', [])
 .controller('NarrowItDownController', NarrowItDownController)
-.service('MenuSearchService', MenuSearchService)
-.directive('foundItem', foundItem);
+.service('MenuSearchService', MenuSearchService);
 
-function foundItem() {
-  var ddo = {
-    templateUrl: 'menuList.html',
-    scope: {
-      menulist: '<',
-       onRemove: '&'
-    },
-   };
 
-  return ddo;
-}
 
 
 NarrowItDownController.$inject = ['MenuSearchService'];
@@ -49,7 +38,7 @@ var foundItems=[];
           list.menulist=foundItems;
          }
         else {
-            list.error="none";
+             list.error="none";
              }
          })
         .catch(function (error) { 
