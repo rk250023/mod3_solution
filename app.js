@@ -27,7 +27,7 @@ function foundItemDirectiveController() {
       list.found="";
       if(list.status === "TRUE") {
        list.found="TRUE";
-
+        console.log("From directive ctrl");
         }
 
 }
