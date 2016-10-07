@@ -29,13 +29,13 @@ function NarrowItDownController(MenuSearchService) {
              list.menulist="";
          list.search = function () {
        var searchItem= list.choice;
-   console.log(list.choice);
- getMatchedMenuItem(searchItem);
+   getMatchedMenuItem(searchItem);
         
         }
 function getMatchedMenuItem (searchItem) {
 var foundItems=[];
- var foundItems1=[];
+ var foundItems1=[]; 
+console.log(searchItem);
  
   var promise = MenuSearchService.getDatafromserver();
 
