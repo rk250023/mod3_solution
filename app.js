@@ -54,9 +54,10 @@ var foundItems=[];
        for(var i=0;i<foundItems1.length; i++){
            if (foundItems1[i].description.toLowerCase().indexOf(searchItem) != -1) {
             foundItems.push(foundItems1[i]);
-             list.found="";
-                        
+                                    
             }
+             console.log("from srch", searchItem);
+           list.found="";
          }
           if (list.found === "") {
           MenuSearchService.storeMenu(foundItems);  
