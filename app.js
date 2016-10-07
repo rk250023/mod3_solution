@@ -10,6 +10,7 @@ function foundItemDirective() {
     templateUrl: 'menuList.html',
     scope: {
       items: '<',
+      status:'<',
        onRemove: '&'
     },
       controller: foundItemDirectiveController,
@@ -23,6 +24,9 @@ function foundItemDirective() {
 
 function foundItemDirectiveController() {
   var list = this;
+      list.found="";
+      if(list.status == "TRUE") {
+       list.found="TRUE";
 
     console.log(list.items);
 
@@ -36,6 +40,7 @@ function NarrowItDownController(MenuSearchService) {
             list.choice="";
             list.error="";
              list.menulist="";
+             list.found="FALSE";
          list.search = function () {
        var searchItem= list.choice;
    getMatchedMenuItem(searchItem);
@@ -49,21 +54,20 @@ var foundItems=[];
 
   promise.then(function (response) {
        foundItems1 =response.data.menu_items;
-        if (searchItem) {
+               if (searchItem) {
        for(var i=0;i<foundItems1.length; i++){
            if (foundItems1[i].description.toLowerCase().indexOf(searchItem) != -1) {
             foundItems.push(foundItems1[i]);
+             list.found="TRUE";
                         
             }
          }
-          console.log(foundItems);
+          if (list.found = "TRUE") {
           MenuSearchService.storeMenu(foundItems);  
           list.menulist=foundItems;
-         console.log("pbreak");
-          console.log(list.menulist);
          }
         else {
-             list.error="none";
+              list.found="FALSE";
              }
          })
         .catch(function (error) { 
