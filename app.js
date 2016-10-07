@@ -37,6 +37,7 @@ function NarrowItDownController(MenuSearchService) {
             list.menulist="";
              list.found="";
          list.search = function () {
+           list.found="";
        var searchItem= list.choice;
    getMatchedMenuItem(searchItem);
         
@@ -78,7 +79,6 @@ var foundItems=[];
 
 } 
 list.removeItem = function (itemIndex) {
-list.found="TRUE";
  MenuSearchService.remove(itemIndex);
    list.menulist=MenuSearchService.getMenu();
   };
