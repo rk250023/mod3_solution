@@ -13,6 +13,7 @@ function foundItemDirective() {
        onRemove: '&'
     },
    };
+   console.log("ITEM List", items);
 
   return ddo;
 }
