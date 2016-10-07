@@ -28,8 +28,7 @@ function NarrowItDownController(MenuSearchService) {
             list.error="";
              list.menulist="";
          list.search = function () {
-        console.log("test");
-var searchItem= list.choice;
+       var searchItem= list.choice;
    console.log(list.choice);
  getMatchedMenuItem(searchItem);
         
