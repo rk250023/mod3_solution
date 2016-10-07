@@ -5,12 +5,11 @@ angular.module('NarrowItDownApp', [])
 .service('MenuSearchService', MenuSearchService)
 .directive('foundItem', foundItem);
 
-
 function foundItem() {
   var ddo = {
     templateUrl: 'menuList.html',
     scope: {
-      menulist: '<'
+      menulist: '<',
        onRemove: '&'
     },
    };
@@ -88,5 +87,6 @@ service.storeMenu = function(menu) {
 service.getMenu= function () {
      return itemlist;
 } 
+}
 
 })();
