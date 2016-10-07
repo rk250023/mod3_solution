@@ -1,4 +1,4 @@
 <ol>
   <li ng-repeat="it in list.items">{{ it.name }}<button ng-click="list.onRemove({index: $index});">Remove Item</button></li>
 </ol>
-<div class="emptyMessage" ng-show="list.Mystatus">Item did not found in the menu</div>
+<div class="error" ng-show="list.Mystatus">Item did not found in the menu</div>
