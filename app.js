@@ -54,17 +54,17 @@ var foundItems=[];
        for(var i=0;i<foundItems1.length; i++){
            if (foundItems1[i].description.toLowerCase().indexOf(searchItem) != -1) {
             foundItems.push(foundItems1[i]);
-             list.found="TRUE";
+             list.found="";
                         
             }
          }
-          if (list.found === "TRUE") {
+          if (list.found === "") {
           MenuSearchService.storeMenu(foundItems);  
           list.menulist=foundItems;
          }
           else {
               list.found="FALSE";
-            console.log("Nothing selected1",list.found);
+            console.log("Nothing found");
                }
 
         }
