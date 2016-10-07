@@ -3,26 +3,22 @@
 angular.module('NarrowItDownApp', [])
 .controller('NarrowItDownController', NarrowItDownController)
 .service('MenuSearchService', MenuSearchService)
-.directive('listItemDescription', ListItemDescription)
-.directive('listItem', ListItem);
+.directive('foundItem', foundItem);
 
 
-function ListItem() {
+function foundItem() {
   var ddo = {
-    templateUrl: 'listItem.html'
-  };
+    templateUrl: 'menuList.html',
+    scope: {
+      menulist: '<'
+       onRemove: '&'
+    },
+   };
 
   return ddo;
 }
 
 
-function ListItemDescription() {
-  var ddo = {
-    template: '{{ it.description }}'
-  };
-
-  return ddo;
-}
 NarrowItDownController.$inject = ['MenuSearchService'];
 
 function NarrowItDownController(MenuSearchService) {
@@ -37,9 +33,7 @@ var searchItem= list.choice;
 function getMatchedMenuItem (searchItem) {
 var foundItems=[];
  var foundItems1=[];
- list.removeItem = function (itemIndex) {
-    MenuSearchService.remove(itemIndex);
-  };
+ 
   var promise = MenuSearchService.getDatafromserver();
 
   promise.then(function (response) {
@@ -64,6 +58,11 @@ var foundItems=[];
           });
 
 } 
+list.removeItem = function (itemIndex) {
+ MenuSearchService.remove(itemIndex);
+     MenuSearchService.storeMenu(menu);   
+   list.menulist=MenuSearchService.getMenu();
+  };
 
 }
 
@@ -86,6 +85,8 @@ service.storeMenu = function(menu) {
   itemlist=menu;
   }
  
+service.getMenu= function () {
+     return itemlist;
 } 
 
 })();

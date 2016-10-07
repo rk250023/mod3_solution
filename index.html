@@ -38,9 +38,7 @@ style>
     <div class="form-group narrow-button">
       <button class="btn btn-primary" ng-click="list.search();">Narrow It Down For Me!</button>
      </div> 
-      <ol>
-        <list-item ng-repeat="it in list.menulist"></list-item>
-      </ol>
+      <found-Item menulist="list.menulist" on-remove="list.removeItem(index)"></found-Item>
       <div class="emptyMessage"ng-show="list.error">Item didnot found in the menu</div>
       </div>
       
