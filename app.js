@@ -40,7 +40,6 @@ var foundItems=[];
 
   promise.then(function (response) {
        foundItems1 =response.data.menu_items;
-console.log(foundItems1)
         if (searchItem) {
        for(var i=0;i<foundItems1.length; i++){
            if (foundItems1[i].description.toLowerCase().indexOf(searchItem) != -1) {
@@ -48,8 +47,11 @@ console.log(foundItems1)
                         
             }
          }
+          console.log(foundItems);
           MenuSearchService.storeMenu(foundItems);  
           list.menulist=foundItems;
+         console.log("pbreak");
+          console.log(list.menulist);
          }
         else {
              list.error="none";
