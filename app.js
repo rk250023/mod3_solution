@@ -78,6 +78,7 @@ var foundItems=[];
 
 } 
 list.removeItem = function (itemIndex) {
+list.found="TRUE";
  MenuSearchService.remove(itemIndex);
    list.menulist=MenuSearchService.getMenu();
   };
