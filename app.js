@@ -35,13 +35,12 @@ function NarrowItDownController(MenuSearchService) {
 function getMatchedMenuItem (searchItem) {
 var foundItems=[];
  var foundItems1=[]; 
-console.log("from fn",searchItem);
  
   var promise = MenuSearchService.getDatafromserver();
 
   promise.then(function (response) {
        foundItems1 =response.data.menu_items;
-
+console.log(foundItems1)
         if (searchItem) {
        for(var i=0;i<foundItems1.length; i++){
            if (foundItems1[i].description.toLowerCase().indexOf(searchItem) != -1) {
