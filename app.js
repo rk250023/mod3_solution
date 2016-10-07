@@ -10,7 +10,7 @@ function foundItemDirective() {
     templateUrl: 'menuList.html',
     scope: {
       items: '<',
-      status:'<',
+      Mystatus:'@status',
        onRemove: '&'
     },
       controller: foundItemDirectiveController,
@@ -24,13 +24,8 @@ function foundItemDirective() {
 
 function foundItemDirectiveController() {
   var list = this;
-      list.found="";
-console.log("status value",list.status);
-      if(list.status === "FALSE") {
-       list.found="TRUE";
-        console.log("From directive ctrl");
-        }
-
+      list.Mystatus="";
+   
 }
 
 
