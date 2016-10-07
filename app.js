@@ -3,13 +3,13 @@
 angular.module('NarrowItDownApp', [])
 .controller('NarrowItDownController', NarrowItDownController)
 .service('MenuSearchService', MenuSearchService)
-.directive('foundItem', foundItem);
+.directive('foundItem', foundItemDirective);
 
-function foundItem() {
+function foundItemDirective() {
   var ddo = {
     templateUrl: 'menuList.html',
     scope: {
-      menulist: '<',
+      items: '<',
        onRemove: '&'
     },
    };
