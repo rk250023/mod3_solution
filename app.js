@@ -28,7 +28,7 @@ function foundItemDirectiveController() {
       if(list.status == "TRUE") {
        list.found="TRUE";
 
-    console.log(list.items);
+        }
 
 }
 
@@ -62,7 +62,7 @@ var foundItems=[];
                         
             }
          }
-          if (list.found = "TRUE") {
+          if (list.found == "TRUE") {
           MenuSearchService.storeMenu(foundItems);  
           list.menulist=foundItems;
          }
