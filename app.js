@@ -12,9 +12,12 @@ function foundItemDirective() {
       items: '<',
        onRemove: '&'
     },
-   };
-   console.log("ITEM List", items);
+      controller: foundItemDirectiveController,
+    controllerAs: 'list',
+    bindToController: true
 
+   };
+   
   return ddo;
 }
 
