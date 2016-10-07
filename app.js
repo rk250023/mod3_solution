@@ -66,10 +66,15 @@ var foundItems=[];
           MenuSearchService.storeMenu(foundItems);  
           list.menulist=foundItems;
          }
+          else {
+              list.found="FALSE";
+            console.log("Nothing selected1",list.found);
+               }
 
         }
         else {
               list.found="FALSE";
+               console.log("Nothing selected",list.found);
              }
          })
         .catch(function (error) { 
