@@ -78,7 +78,6 @@ var foundItems=[];
 } 
 list.removeItem = function (itemIndex) {
  MenuSearchService.remove(itemIndex);
-     MenuSearchService.storeMenu(menu);   
    list.menulist=MenuSearchService.getMenu();
   };
 
@@ -98,7 +97,6 @@ function MenuSearchService($http) {
 service.remove = function (itemIndex) {
    itemlist.splice(itemIndex, 1);
   }; 
-
 service.storeMenu = function(menu) {
   itemlist=menu;
   }
