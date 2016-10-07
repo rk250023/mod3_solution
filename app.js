@@ -35,7 +35,7 @@ function NarrowItDownController(MenuSearchService) {
 function getMatchedMenuItem (searchItem) {
 var foundItems=[];
  var foundItems1=[]; 
-console.log(searchItem);
+console.log('from fn' +searchItem);
  
   var promise = MenuSearchService.getDatafromserver();
 
